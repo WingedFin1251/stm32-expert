@@ -78,6 +78,9 @@ Determine target STM32 series from HAL header includes:
 - **references/clock-config.md** — PLL calculation tables, max frequency by series, wait state formulas; load when clock issues found
 - **references/peripheral-common.md** — GPIO/UART/SPI/I2C/ADC/TIM HAL function quick reference; load for peripheral init issues
 - **references/freertos.md** — FreeRTOS config table, ISR-safe API list, stack estimation formulas; load for RTOS sync issues
+- **references/usb.md** — USB device peripheral reference, transaction model, suspend/resume; load for USB issues
+- **references/can.md** — CAN 2.0 A/B reference, bit timing formula, filter bank config; load for CAN issues
+- **references/hrtim.md** — High-resolution timer (HRTIM) calibration, period calculation, output config; load for HRTIM/PWM issues
 - **scripts/check-ioc-config.sh** — CubeMX .ioc configuration conflict detector
 
 ## Code Review Output Format

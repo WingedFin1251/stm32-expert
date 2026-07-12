@@ -434,3 +434,5 @@ HAL_Delay(100);  // Millisecond-accurate, based on SysTick
 - [STM32Cube HAL Documentation](https://www.st.com/en/embedded-software/stm32cube-mcu-packages.html)
 - [STM32 Reference Manuals](https://www.st.com/en/microcontrollers-microprocessors/stm32f4-series.html#documentation)
 - [FreeRTOS Coding Standard](https://www.freertos.org/FreeRTOS-coding-standard.html)
+- [AN4539 HRTIM Guide](https://www.st.com/resource/en/application_note/an4539-hrtim-guide-stmicroelectronics.pdf)
+- [USB 2.0 Specification](https://www.usb.org/document-library/usb-20-specification)
