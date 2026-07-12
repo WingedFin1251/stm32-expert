@@ -1,8 +1,8 @@
 # stm32-expert
 
-**STM32 嵌入式开发审查技能 — 基于 8 维度优先级规则的 STM32 HAL/LL 代码与配置审查，集成 CubeMX .ioc 检查工具。**
+**STM32 嵌入式开发审查技能 — 基于 8 维度优先级规则的 STM32 HAL/LL 代码与配置审查，集成 CubeMX .ioc 检查工具，覆盖 USB/CAN/HRTIM 外设。**
 
-**An STM32 embedded development review skill — automated quality checks based on 8 priority-ranked rule dimensions for STM32 HAL/LL code and configuration, integrating CubeMX .ioc validation.**
+**An STM32 embedded development review skill — automated quality checks based on 8 priority-ranked rule dimensions for STM32 HAL/LL code, configuration, USB/CAN/HRTIM peripherals, integrating CubeMX .ioc validation.**
 
 > 仿照 [cpp-expert](https://github.com/WingedFin1251/cpp-expert) 的 8 维模型设计，专为 STM32 微控制器的时钟配置、外设驱动、中断/NVIC、DMA、FreeRTOS、引脚冲突、低功耗模式和项目结构审查而构建。
 >
@@ -62,6 +62,12 @@ stm32-expert/
 │   │                           # PLL calculation tables, max frequencies, wait states, RCC sequence
 │   ├── peripheral-common.md    # GPIO/UART/SPI/I2C/ADC/TIM HAL 函数速查 + 常见错误
 │   │                           # HAL quick reference + common mistakes for GPIO/UART/SPI/I2C/ADC/TIM
+│   ├── usb.md                  # USB 设备外设参考：事务模型、挂起/唤醒、HAL 序列
+│   │                           # USB device reference: transaction model, suspend/resume, HAL sequence
+│   ├── can.md                  # CAN 2.0 A/B 参考：位时序公式、滤波器配置、模式
+│   │                           # CAN 2.0 A/B reference: bit timing formula, filter config, modes
+│   ├── hrtim.md                # 高精度定时器 (HRTIM)：校准、周期计算、输出配置
+│   │                           # High-resolution timer: DLL calibration, period calculation, output config
 │   └── freertos.md             # FreeRTOS 配置表、ISR 安全 API 列表、任务栈评估
 │                               # FreeRTOS config table, ISR-safe API list, stack estimation
 └── scripts/
@@ -78,7 +84,7 @@ stm32-expert/
 | 优先级 / Priority | 维度 / Dimension | 关键检查项 / Key Checks |
 | :---------------- | :--------------- | :---------------------- |
 | 🔴 **CRITICAL** | 时钟与系统配置 / Clock & System | PLL 倍频计算、Flash 等待周期、RCC 顺序、HSI/HSE |
-| 🔴 **CRITICAL** | 外设初始化 / Peripheral Init | GPIO 模式/AF、UART 波特率、SPI CPOL/CPHA、I2C 时序 |
+| 🔴 **CRITICAL** | 外设初始化 / Peripheral Init | GPIO/UART/SPI/I2C/ADC/TIM、USB/CAN/HRTIM 配置 |
 | 🟠 **HIGH** | 中断与 NVIC / Interrupt & NVIC | 优先级分组、IRQ 处理函数命名、临界区保护 |
 | 🟠 **HIGH** | DMA 配置 / DMA Config | 方向/数据宽度一致、循环模式、中断触发、多路优先级 |
 | 🟠 **HIGH** | FreeRTOS 同步 / FreeRTOS Sync | 任务栈评估、FromISR API、互斥量 vs 信号量 |
@@ -167,6 +173,7 @@ bash scripts/check-ioc-config.sh project.ioc
 ```
 
 ### 版本历史 / Version History
+- **v1.1** — 新增 USB/CAN/HRTIM 外设参考（基于 ST 官方培训文档交叉验证） / Added USB/CAN/HRTIM peripheral references (cross-validated against ST official training docs)
 - **v1.0** — 初始版本：8 维度规则体系、3 参考文件、1 脚本 / Initial release: 8-dimension rule system, 3 reference files, 1 script
 
 ---
