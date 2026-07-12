@@ -13,7 +13,7 @@ USB/SDIO = VCO / PLLQ
 | Series | SYSCLK Max | AHB Max | APB1 Max | APB2 Max | VCO Max |
 |--------|-----------|---------|----------|----------|---------|
 | STM32F103 | 72 MHz | 72 MHz | 36 MHz | 72 MHz | N/A |
-| STM32F407 | 168 MHz | 168 MHz | 42 MHz | 84 MHz | 360 MHz |
+| STM32F407 | 168 MHz | 168 MHz | 42 MHz | 84 MHz | 432 MHz |
 | STM32F429 | 180 MHz | 180 MHz | 45 MHz | 90 MHz | 432 MHz |
 | STM32G030 | 64 MHz | 64 MHz | 64 MHz | 64 MHz | 344 MHz |
 | STM32G474 | 170 MHz | 170 MHz | 170 MHz | 170 MHz | 344 MHz |

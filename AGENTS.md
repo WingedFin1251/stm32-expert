@@ -83,12 +83,12 @@ HAL_UART_Init(&huart1);
 #### ❌ Incorrect
 
 ```c
-// STM32F446: HSE=8MHz, PLLM=8, PLLN=432, PLLP=2
-// VCO = 8/8*432 = 432MHz — exceeds F446 VCO max of 360MHz!
+// STM32F446: HSE=8MHz, PLLM=8, PLLN=450, PLLP=2
+// VCO = 8/8*450 = 450MHz — exceeds F446 VCO max of 432MHz!
 RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
 RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
 RCC_OscInitStruct.PLL.PLLM = 8;
-RCC_OscInitStruct.PLL.PLLN = 432;  // VCO out of range!
+RCC_OscInitStruct.PLL.PLLN = 450;  // VCO out of range!
 RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
 ```
 
